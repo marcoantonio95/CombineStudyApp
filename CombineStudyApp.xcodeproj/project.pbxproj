@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E70AFF0529AF8BD500B86E0A /* CombineStudyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AFF0429AF8BD500B86E0A /* CombineStudyAppApp.swift */; };
+		E70AFF0529AF8BD500B86E0A /* CombineStudyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AFF0429AF8BD500B86E0A /* CombineStudyApp.swift */; };
 		E70AFF0729AF8BD500B86E0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70AFF0629AF8BD500B86E0A /* ContentView.swift */; };
 		E70AFF0929AF8BD600B86E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70AFF0829AF8BD600B86E0A /* Assets.xcassets */; };
 		E70AFF0C29AF8BD600B86E0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E70AFF0B29AF8BD600B86E0A /* Preview Assets.xcassets */; };
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		E70AFF0129AF8BD500B86E0A /* CombineStudyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineStudyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E70AFF0429AF8BD500B86E0A /* CombineStudyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineStudyAppApp.swift; sourceTree = "<group>"; };
+		E70AFF0429AF8BD500B86E0A /* CombineStudyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineStudyApp.swift; sourceTree = "<group>"; };
 		E70AFF0629AF8BD500B86E0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E70AFF0829AF8BD600B86E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E70AFF0B29AF8BD600B86E0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -104,7 +104,8 @@
 		E70AFF0329AF8BD500B86E0A /* CombineStudyApp */ = {
 			isa = PBXGroup;
 			children = (
-				E70AFF0429AF8BD500B86E0A /* CombineStudyAppApp.swift */,
+				E7F1CAB529AF8E2C00982C01 /* FirstExample */,
+				E70AFF0429AF8BD500B86E0A /* CombineStudyApp.swift */,
 				E70AFF0629AF8BD500B86E0A /* ContentView.swift */,
 				E70AFF0829AF8BD600B86E0A /* Assets.xcassets */,
 				E70AFF0A29AF8BD600B86E0A /* Preview Content */,
@@ -135,6 +136,13 @@
 				E70AFF2129AF8BD600B86E0A /* CombineStudyAppUITestsLaunchTests.swift */,
 			);
 			path = CombineStudyAppUITests;
+			sourceTree = "<group>";
+		};
+		E7F1CAB529AF8E2C00982C01 /* FirstExample */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FirstExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E70AFF0729AF8BD500B86E0A /* ContentView.swift in Sources */,
-				E70AFF0529AF8BD500B86E0A /* CombineStudyAppApp.swift in Sources */,
+				E70AFF0529AF8BD500B86E0A /* CombineStudyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
