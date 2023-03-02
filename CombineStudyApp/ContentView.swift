@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var firstLink = false
+    @State var secondLink = false
     @State var isSwiftUIMode = true
 
     var body: some View {
@@ -23,8 +24,6 @@ struct ContentView: View {
                     NavigationLink(destination: FirstExampleView(), isActive: $firstLink) {
                         Button(action: {
                             self.firstLink = self.isSwiftUIMode ? true : false
-
-                            print("isSwiftUIMode: \(self.isSwiftUIMode)")
                         }) {
                             Capsule()
                                 .fill(Color("primaryColor"))
@@ -40,18 +39,24 @@ struct ContentView: View {
                         }
                     }
 
-                    Capsule()
-                        .fill(Color("primaryColor"))
-                        .frame(height: 45, alignment: .trailing)
-                        .padding(.horizontal, 16)
-                        .overlay(
-                            VStack {
-                                Text("Request + ImageView")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.white)
-                            }
-                        )
-
+                    NavigationLink(destination: SecondExampleView(), isActive: $secondLink) {
+                        Button(action: {
+                            self.secondLink = self.isSwiftUIMode ? true : false
+                        }) {
+                            Capsule()
+                                .fill(Color("primaryColor"))
+                                .frame(height: 45, alignment: .trailing)
+                                .padding(.horizontal, 16)
+                                .overlay(
+                                    VStack {
+                                        Text("Request + ImageView")
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color.white)
+                                    }
+                                )
+                        }
+                    }
+                    
                     Capsule()
                         .fill(Color("primaryColor"))
                         .frame(height: 45, alignment: .trailing)
