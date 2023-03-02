@@ -5,9 +5,13 @@
 //  Created by Marco Antonio Oliveira on 01/03/23.
 //
 
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
+    @State var firstLink = false
+    @State var isSwiftUIMode = true
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center, spacing: 8.0) {
@@ -16,17 +20,25 @@ struct ContentView: View {
                     .bold()
                 Text("Select an example option:")
                 VStack(spacing: 16.0) {
-                    Capsule()
-                        .fill(Color("primaryColor"))
-                        .frame(height: 45, alignment: .trailing)
-                        .padding(.horizontal, 16)
-                        .overlay(
-                            VStack {
-                                Text("Input + label")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.white)
-                            }
-                        )
+                    NavigationLink(destination: FirstExampleView(), isActive: $firstLink) {
+                        Button(action: {
+                            self.firstLink = self.isSwiftUIMode ? true : false
+
+                            print("isSwiftUIMode: \(self.isSwiftUIMode)")
+                        }) {
+                            Capsule()
+                                .fill(Color("primaryColor"))
+                                .frame(height: 45, alignment: .trailing)
+                                .padding(.horizontal, 16)
+                                .overlay(
+                                    VStack {
+                                        Text("Input + label")
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color.white)
+                                    }
+                                )
+                        }
+                    }
 
                     Capsule()
                         .fill(Color("primaryColor"))
@@ -52,6 +64,10 @@ struct ContentView: View {
                             }
                         )
                 }
+
+                Toggle("Show SwiftUi examples", isOn: $isSwiftUIMode)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("background"))
         }
