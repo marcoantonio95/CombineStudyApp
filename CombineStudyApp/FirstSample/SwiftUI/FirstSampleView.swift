@@ -1,5 +1,5 @@
 //
-//  FirstExampleView.swift
+//  FirstSampleView.swift
 //  CombineStudyApp
 //
 //  Created by Marco Antonio Oliveira on 01/03/23.
@@ -9,14 +9,13 @@ import Combine
 import Foundation
 import SwiftUI
 
-final class FirstExampleViewModel: ObservableObject {
+final class FirstSampleViewModel: ObservableObject {
     @Published var savedText: String = ""
 }
 
-struct FirstExampleView: View {
+struct FirstSampleView: View {
     @State var text: String = ""
-
-    @ObservedObject private var viewModel = FirstExampleViewModel()
+    @ObservedObject private var viewModel = FirstSampleViewModel()
 
     var body: some View {
         VStack {
@@ -49,15 +48,15 @@ struct FirstExampleView: View {
                     )
                     .padding(.horizontal, 16)
             }
-            .navigationTitle("First example")
+            .navigationTitle("First Sample")
 
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("background"))
     }
 }
 
-struct FirstExampleView_Previews: PreviewProvider {
+struct FirstSampleView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstExampleView()
+        FirstSampleView()
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SecondExampleView.swift
+//  SecondSampleView.swift
 //  CombineStudyApp
 //
 //  Created by Marco Antonio Oliveira on 02/03/23.
@@ -8,7 +8,7 @@
 import Combine
 import SwiftUI
 
-final class SecondExampleViewModel: ObservableObject {
+final class SecondSampleViewModel: ObservableObject {
     @Published var image: UIImage = UIImage()
 
     func loadImage(for urlString: String) {
@@ -24,9 +24,9 @@ final class SecondExampleViewModel: ObservableObject {
     }
 }
 
-struct SecondExampleView: View {
+struct SecondSampleView: View {
     var urlString: String = "https://miro.medium.com/max/800/1*KLrw9Oy3qxuBGqrVKXGL_A.png"
-    @ObservedObject var viewModel = SecondExampleViewModel()
+    @ObservedObject var viewModel = SecondSampleViewModel()
     @State var image: UIImage = UIImage()
 
     var body: some View {
@@ -44,12 +44,12 @@ struct SecondExampleView: View {
                 Text("Downloaded image!")
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("background"))
-        .navigationTitle("Second Example")
+        .navigationTitle("Second Sample")
     }
 }
 
-struct SecondExampleView_Previews: PreviewProvider {
+struct SecondSampleView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondExampleView()
+        SecondSampleView()
     }
 }
