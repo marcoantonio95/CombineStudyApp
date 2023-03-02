@@ -19,9 +19,9 @@ struct ContentView: View {
                 Text("Home!")
                     .font(.title)
                     .bold()
-                Text("Select an example option:")
+                Text("Select an sample option:")
                 VStack(spacing: 16.0) {
-                    NavigationLink(destination: FirstExampleView(), isActive: $firstLink) {
+                    NavigationLink(destination: FirstSampleView(), isActive: $firstLink) {
                         Button(action: {
                             self.firstLink = self.isSwiftUIMode ? true : false
                         }) {
@@ -39,7 +39,7 @@ struct ContentView: View {
                         }
                     }
 
-                    NavigationLink(destination: SecondExampleView(), isActive: $secondLink) {
+                    NavigationLink(destination: SecondSampleView(), isActive: $secondLink) {
                         Button(action: {
                             self.secondLink = self.isSwiftUIMode ? true : false
                         }) {
@@ -70,7 +70,7 @@ struct ContentView: View {
                         )
                 }
 
-                Toggle("Show SwiftUi examples", isOn: $isSwiftUIMode)
+                Toggle("Show SwiftUi samples", isOn: $isSwiftUIMode)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
