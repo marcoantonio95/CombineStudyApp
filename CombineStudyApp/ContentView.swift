@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var firstLink = false
     @State var secondLink = false
+    @State var thirdLink = false
     @State var isSwiftUIMode = true
 
     var body: some View {
@@ -56,18 +57,24 @@ struct ContentView: View {
                                 )
                         }
                     }
-                    
-                    Capsule()
-                        .fill(Color("primaryColor"))
-                        .frame(height: 45, alignment: .trailing)
-                        .padding(.horizontal, 16)
-                        .overlay(
-                            VStack {
-                                Text("Request + TableView")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.white)
-                            }
-                        )
+
+                    NavigationLink(destination: ThirdSampleView(), isActive: $thirdLink) {
+                        Button(action: {
+                            self.thirdLink = self.isSwiftUIMode ? true : false
+                        }) {
+                            Capsule()
+                                .fill(Color("primaryColor"))
+                                .frame(height: 45, alignment: .trailing)
+                                .padding(.horizontal, 16)
+                                .overlay(
+                                    VStack {
+                                        Text("Request + TableView")
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color.white)
+                                    }
+                                )
+                        }
+                    }
                 }
 
                 Toggle("Show SwiftUi samples", isOn: $isSwiftUIMode)
