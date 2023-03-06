@@ -22,9 +22,11 @@ struct ContentView: View {
                     .bold()
                 Text("Select an sample option:")
                 VStack(spacing: 16.0) {
-                    NavigationLink(destination: FirstSampleView(), isActive: $firstLink) {
+                    NavigationLink(destination:
+                                    self.isSwiftUIMode ? AnyView(FirstSampleView()) : AnyView(FirstSampleRxSwiftViewController())
+                                   , isActive: $firstLink) {
                         Button(action: {
-                            self.firstLink = self.isSwiftUIMode ? true : false
+                            self.firstLink = true
                         }) {
                             Capsule()
                                 .fill(Color("primaryColor"))
@@ -39,7 +41,6 @@ struct ContentView: View {
                                 )
                         }
                     }
-
                     NavigationLink(destination: SecondSampleView(), isActive: $secondLink) {
                         Button(action: {
                             self.secondLink = self.isSwiftUIMode ? true : false

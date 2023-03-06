@@ -28,13 +28,13 @@ struct FirstSampleView: View {
                         VStack {
                             Text(viewModel.savedText)
                             VStack(spacing: 16) {
-                            TextField("Type something..", text: $text).padding(12)
+                            TextField("Type something...", text: $text).padding(12)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 16)
                                         .stroke(Color("primaryColor"), lineWidth: 3)
                                 )
                             Button("Send!", action: {
-                                viewModel.savedText = viewModel.savedText + text
+                                viewModel.savedText = text
                             })
                                 .padding()
                                 .frame(width: 140, height: 40, alignment: .center)
