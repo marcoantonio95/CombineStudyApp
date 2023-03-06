@@ -9,6 +9,8 @@ import Combine
 import SwiftUI
 
 final class SecondSampleViewModel: ObservableObject {
+    let urlString: String = "https://miro.medium.com/max/800/1*KLrw9Oy3qxuBGqrVKXGL_A.png"
+
     @Published var image: UIImage = UIImage()
 
     func loadImage(for urlString: String) {
@@ -25,7 +27,7 @@ final class SecondSampleViewModel: ObservableObject {
 }
 
 struct SecondSampleView: View {
-    var urlString: String = "https://miro.medium.com/max/800/1*KLrw9Oy3qxuBGqrVKXGL_A.png"
+
     @ObservedObject var viewModel = SecondSampleViewModel()
     @State var image: UIImage = UIImage()
 
@@ -39,7 +41,7 @@ struct SecondSampleView: View {
                         self.image = image
                     }
                     .onAppear {
-                        viewModel.loadImage(for: urlString)
+                        viewModel.loadImage(for: viewModel.urlString)
                     }
                 Text("Downloaded image!")
             }.frame(maxWidth: .infinity, maxHeight: .infinity)

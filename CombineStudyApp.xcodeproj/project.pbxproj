@@ -22,6 +22,8 @@
 		E72DAD1C29B24A3E00F68E46 /* CharacterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72DAD1B29B24A3E00F68E46 /* CharacterPage.swift */; };
 		E74120BE29B26F70001C6E8A /* FirstSampleRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74120BD29B26F70001C6E8A /* FirstSampleRxSwiftViewController.swift */; };
 		E74120C029B27541001C6E8A /* FirstSampleRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74120BF29B27541001C6E8A /* FirstSampleRxSwiftView.swift */; };
+		E74CAF1329B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1229B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift */; };
+		E74CAF1729B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1629B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift */; };
 		E7F1CAAE29AF8D5000982C01 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1CAAD29AF8D5000982C01 /* RxBlocking */; };
 		E7F1CAB029AF8D5000982C01 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1CAAF29AF8D5000982C01 /* RxCocoa */; };
 		E7F1CAB229AF8D5000982C01 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1CAB129AF8D5000982C01 /* RxRelay */; };
@@ -64,6 +66,8 @@
 		E72DAD1B29B24A3E00F68E46 /* CharacterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPage.swift; sourceTree = "<group>"; };
 		E74120BD29B26F70001C6E8A /* FirstSampleRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSampleRxSwiftViewController.swift; sourceTree = "<group>"; };
 		E74120BF29B27541001C6E8A /* FirstSampleRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSampleRxSwiftView.swift; sourceTree = "<group>"; };
+		E74CAF1229B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSampleRxSwiftViewController.swift; sourceTree = "<group>"; };
+		E74CAF1629B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSampleRxSwiftView.swift; sourceTree = "<group>"; };
 		E7F1CAB829AF8FF100982C01 /* FirstSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,7 @@
 		E72DAD0A29B0FDC000F68E46 /* SecondSample */ = {
 			isa = PBXGroup;
 			children = (
+				E74CAF1129B66DBC00D10AE0 /* RxSwift */,
 				E72DAD1029B141F100F68E46 /* SwiftUI */,
 			);
 			path = SecondSample;
@@ -238,6 +243,31 @@
 				E74120BD29B26F70001C6E8A /* FirstSampleRxSwiftViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E74CAF1129B66DBC00D10AE0 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				E74CAF1529B66E1900D10AE0 /* View */,
+				E74CAF1429B66E1300D10AE0 /* Controller */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		E74CAF1429B66E1300D10AE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E74CAF1229B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E74CAF1529B66E1900D10AE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E74CAF1629B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E7F1CAB529AF8E2C00982C01 /* FirstSample */ = {
@@ -394,9 +424,11 @@
 				E72DAD1A29B160B000F68E46 /* CharacterRowView.swift in Sources */,
 				E74120BE29B26F70001C6E8A /* FirstSampleRxSwiftViewController.swift in Sources */,
 				E72DAD1429B1568600F68E46 /* ThirdSampleView.swift in Sources */,
+				E74CAF1329B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift in Sources */,
 				E7F1CAB929AF8FF100982C01 /* FirstSampleView.swift in Sources */,
 				E74120C029B27541001C6E8A /* FirstSampleRxSwiftView.swift in Sources */,
 				E72DAD0E29B0FE1C00F68E46 /* SecondSampleView.swift in Sources */,
+				E74CAF1729B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift in Sources */,
 				E72DAD1729B15F2400F68E46 /* Character.swift in Sources */,
 				E70AFF0729AF8BD500B86E0A /* ContentView.swift in Sources */,
 				E70AFF0529AF8BD500B86E0A /* CombineStudyApp.swift in Sources */,
