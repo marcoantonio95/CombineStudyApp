@@ -51,7 +51,7 @@ final class ThirdSampleRxSwiftViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.fetchCharacters().bind(to: self.content.tableView.rx.items(cellIdentifier: "characterCell", cellType: CharacterTableViewCell.self)) {
+        viewModel.fetchCharacters().bind(to: content.tableView.rx.items(cellIdentifier: "characterCell", cellType: CharacterTableViewCell.self)) {
             row,item,cell in
             cell.nameLabel.text = item.name
             cell.specieLabel.text = item.species

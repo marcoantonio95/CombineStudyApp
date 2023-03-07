@@ -35,7 +35,7 @@ class CharacterTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.configView()
+        configView()
     }
 
     required init?(coder: NSCoder) {
