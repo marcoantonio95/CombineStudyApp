@@ -24,6 +24,9 @@
 		E74120C029B27541001C6E8A /* FirstSampleRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74120BF29B27541001C6E8A /* FirstSampleRxSwiftView.swift */; };
 		E74CAF1329B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1229B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift */; };
 		E74CAF1729B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1629B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift */; };
+		E74CAF1C29B67E3D00D10AE0 /* ThirdSampleRxSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1B29B67E3C00D10AE0 /* ThirdSampleRxSwiftViewController.swift */; };
+		E74CAF1E29B67E5800D10AE0 /* ThirdSampleRxSwiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1D29B67E5800D10AE0 /* ThirdSampleRxSwiftView.swift */; };
+		E74CAF2029B67FCD00D10AE0 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74CAF1F29B67FCD00D10AE0 /* CharacterTableViewCell.swift */; };
 		E7F1CAAE29AF8D5000982C01 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1CAAD29AF8D5000982C01 /* RxBlocking */; };
 		E7F1CAB029AF8D5000982C01 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1CAAF29AF8D5000982C01 /* RxCocoa */; };
 		E7F1CAB229AF8D5000982C01 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = E7F1CAB129AF8D5000982C01 /* RxRelay */; };
@@ -68,6 +71,9 @@
 		E74120BF29B27541001C6E8A /* FirstSampleRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSampleRxSwiftView.swift; sourceTree = "<group>"; };
 		E74CAF1229B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSampleRxSwiftViewController.swift; sourceTree = "<group>"; };
 		E74CAF1629B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSampleRxSwiftView.swift; sourceTree = "<group>"; };
+		E74CAF1B29B67E3C00D10AE0 /* ThirdSampleRxSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSampleRxSwiftViewController.swift; sourceTree = "<group>"; };
+		E74CAF1D29B67E5800D10AE0 /* ThirdSampleRxSwiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSampleRxSwiftView.swift; sourceTree = "<group>"; };
+		E74CAF1F29B67FCD00D10AE0 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		E7F1CAB829AF8FF100982C01 /* FirstSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,6 +194,7 @@
 		E72DAD1129B155FC00F68E46 /* ThirdSample */ = {
 			isa = PBXGroup;
 			children = (
+				E74CAF1829B67D7B00D10AE0 /* RxSwift */,
 				E72DAD1229B1561F00F68E46 /* SwiftUI */,
 			);
 			path = ThirdSample;
@@ -268,6 +275,32 @@
 				E74CAF1629B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E74CAF1829B67D7B00D10AE0 /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				E74CAF1A29B67D8800D10AE0 /* Controller */,
+				E74CAF1929B67D8400D10AE0 /* View */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		E74CAF1929B67D8400D10AE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E74CAF1D29B67E5800D10AE0 /* ThirdSampleRxSwiftView.swift */,
+				E74CAF1F29B67FCD00D10AE0 /* CharacterTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E74CAF1A29B67D8800D10AE0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E74CAF1B29B67E3C00D10AE0 /* ThirdSampleRxSwiftViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E7F1CAB529AF8E2C00982C01 /* FirstSample */ = {
@@ -422,13 +455,16 @@
 			files = (
 				E72DAD1C29B24A3E00F68E46 /* CharacterPage.swift in Sources */,
 				E72DAD1A29B160B000F68E46 /* CharacterRowView.swift in Sources */,
+				E74CAF2029B67FCD00D10AE0 /* CharacterTableViewCell.swift in Sources */,
 				E74120BE29B26F70001C6E8A /* FirstSampleRxSwiftViewController.swift in Sources */,
+				E74CAF1C29B67E3D00D10AE0 /* ThirdSampleRxSwiftViewController.swift in Sources */,
 				E72DAD1429B1568600F68E46 /* ThirdSampleView.swift in Sources */,
 				E74CAF1329B66DE800D10AE0 /* SecondSampleRxSwiftViewController.swift in Sources */,
 				E7F1CAB929AF8FF100982C01 /* FirstSampleView.swift in Sources */,
 				E74120C029B27541001C6E8A /* FirstSampleRxSwiftView.swift in Sources */,
 				E72DAD0E29B0FE1C00F68E46 /* SecondSampleView.swift in Sources */,
 				E74CAF1729B66E2B00D10AE0 /* SecondSampleRxSwiftView.swift in Sources */,
+				E74CAF1E29B67E5800D10AE0 /* ThirdSampleRxSwiftView.swift in Sources */,
 				E72DAD1729B15F2400F68E46 /* Character.swift in Sources */,
 				E70AFF0729AF8BD500B86E0A /* ContentView.swift in Sources */,
 				E70AFF0529AF8BD500B86E0A /* CombineStudyApp.swift in Sources */,

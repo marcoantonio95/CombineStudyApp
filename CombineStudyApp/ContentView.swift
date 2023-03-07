@@ -59,9 +59,9 @@ struct ContentView: View {
                         }
                     }
 
-                    NavigationLink(destination: ThirdSampleView(), isActive: $thirdLink) {
+                    NavigationLink(destination:  self.isSwiftUIMode ? AnyView(ThirdSampleView()) : AnyView(ThirdSampleRxSwiftViewController()), isActive: $thirdLink) {
                         Button(action: {
-                            self.thirdLink = self.isSwiftUIMode ? true : false
+                            self.thirdLink = true
                         }) {
                             Capsule()
                                 .fill(Color("primaryColor"))
