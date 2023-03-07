@@ -19,17 +19,15 @@ class SecondSampleRxSwiftView: UIView {
 
     lazy var textLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.layer.masksToBounds = true
         label.text = "Downloaded image!"
         label.textAlignment = .center
-        label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     init() {
         super.init(frame: .zero)
-        self.configView()
+        configView()
     }
 
     required init?(coder: NSCoder) {

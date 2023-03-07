@@ -22,10 +22,7 @@ class FirstSampleRxSwiftView: UIView {
 
     lazy var resultLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.layer.masksToBounds = true
         label.textAlignment = .center
-        label.backgroundColor = .clear
-        label.layer.cornerRadius = 16
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,7 +50,7 @@ class FirstSampleRxSwiftView: UIView {
 
     init() {
         super.init(frame: .zero)
-        self.configView()
+        configView()
     }
 
     required init?(coder: NSCoder) {

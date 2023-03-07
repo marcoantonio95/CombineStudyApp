@@ -20,7 +20,7 @@ class ThirdSampleRxSwiftView: UIView {
 
     init() {
         super.init(frame: .zero)
-        self.configView()
+        configView()
     }
 
     required init?(coder: NSCoder) {

@@ -25,8 +25,8 @@ final class FirstSampleRxSwiftViewController: UIViewController {
     }
 
     func listenSendButton() {
-        contentView.resultButton.rx.tap.subscribe { text in
-            self.contentView.resultLabel.text = self.contentView.resultTextfield.text
+        contentView.resultButton.rx.tap.subscribe { [weak self] text in
+            self?.contentView.resultLabel.text = self?.contentView.resultTextfield.text
         }.disposed(by: disposeBag)
     }
 }
