@@ -10,19 +10,20 @@ import SwiftUI
 
 final class SecondSampleViewModel: ObservableObject {
     let urlString: String = "https://miro.medium.com/max/800/1*KLrw9Oy3qxuBGqrVKXGL_A.png"
+    var cancellables = Set<AnyCancellable>()
 
     @Published var image: UIImage = UIImage()
 
-    func loadImage(for urlString: String) {
+    func downloadImage(for urlString: String) {
         guard let url = URL(string: urlString) else { return }
 
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            DispatchQueue.main.async {
-                self.image = UIImage(data: data) ?? UIImage()
+        URLSession.shared.dataTaskPublisher(for: url)
+            .receive(on: DispatchQueue.main)
+            .sink { (completion) in
+            } receiveValue: { (data) in
+                self.image = UIImage(data: data.data) ?? UIImage()
             }
-        }
-        task.resume()
+            .store(in: &cancellables)
     }
 }
 
@@ -41,7 +42,7 @@ struct SecondSampleView: View {
                         self.image = image
                     }
                     .onAppear {
-                        viewModel.loadImage(for: viewModel.urlString)
+                        viewModel.downloadImage(for: viewModel.urlString)
                     }
                 Text("Downloaded image!")
             }.frame(maxWidth: .infinity, maxHeight: .infinity)

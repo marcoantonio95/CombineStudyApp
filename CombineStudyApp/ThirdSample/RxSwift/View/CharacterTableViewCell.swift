@@ -14,7 +14,6 @@ class CharacterTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 16
         imageView.clipsToBounds = true
-        imageView.image = .checkmark
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
