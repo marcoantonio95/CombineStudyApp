@@ -6,31 +6,104 @@
 //
 
 import XCTest
+import RxCocoa
+import RxSwift
+import Combine
+
 @testable import CombineStudyApp
 
 class CombineStudyAppTests: XCTestCase {
+    let iterations = 10000
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func test_publishSubject_sum_operation_rxSwift() {
+        measure {
+            var sum = 0
+            let subject = PublishSubject<Int>()
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+            let subscription = subject
+                .subscribe(onNext: { x in
+                    sum += x
+                })
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+            for _ in 0 ..< iterations * 100 {
+                subject.on(.next(1))
+            }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            subscription.dispose()
+
+            XCTAssertEqual(sum, iterations * 100)
         }
     }
 
+    func test_publishSubject_sum_operation_combine() {
+           measure {
+               var sum = 0
+               let subject = PassthroughSubject<Int, Never>()
+
+               let subscription = subject
+                   .sink(receiveValue: { x in
+                       sum += x
+                   })
+
+               for _ in 0 ..< iterations * 100 {
+                   subject.send(1)
+               }
+
+               subscription.cancel()
+
+               XCTAssertEqual(sum, iterations * 100)
+           }
+       }
+
+    func test_two_publishSubject_sum_operation_rxSwift() {
+            measure {
+                var sum = 0
+                let subject = PublishSubject<Int>()
+
+                let subscription1 = subject
+                    .subscribe(onNext: { x in
+                        sum += x
+                    })
+
+                let subscription2 = subject
+                    .subscribe(onNext: { x in
+                        sum += x
+                    })
+
+                for _ in 0 ..< iterations * 100 {
+                    subject.on(.next(1))
+                }
+
+                subscription1.dispose()
+                subscription2.dispose()
+
+                XCTAssertEqual(sum, iterations * 100 * 2)
+            }
+        }
+
+    func test_two_publishSubject_sum_operation_combine() {
+            measure {
+                var sum = 0
+                let subject = PassthroughSubject<Int, Never>()
+
+                let subscription1 = subject
+                    .sink(receiveValue: { x in
+                        sum += x
+                    })
+
+                let subscription2 = subject
+                    .sink(receiveValue: { x in
+                        sum += x
+                    })
+
+                for _ in 0 ..< iterations * 100 {
+                    subject.send(1)
+                }
+
+                subscription1.cancel()
+                subscription2.cancel()
+
+                XCTAssertEqual(sum, iterations * 100 * 2)
+            }
+        }
 }
